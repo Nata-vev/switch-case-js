@@ -3,10 +3,14 @@
 // Зробити перевірки у функціях для запобігання виконання розрахунків з некоректними даними.
 
 const calculator = function (number1, number2, operator) {
-  if (typeof number1 !== "number" ||
-    typeof number2 !== "number" ||
-    isNaN(number1 - number2)) {
-    return null;
+  if (typeof number1 !== "number" || isNaN(number1)) {
+    throw new TypeError('number1 must be correct');
+  }
+  if (typeof number2 !== "number" || isNaN(number2)) {
+    throw new TypeError('number2 must be correct');
+  }
+  if (typeof operator !== "number" || isNaN(operator)) {
+    throw new TypeError('operator must be correct');
   }
   switch (operator) {
     case "+":
